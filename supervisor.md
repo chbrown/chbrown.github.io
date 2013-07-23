@@ -1,3 +1,6 @@
+---
+layout: default
+---
 ## supervisor
 
 `supervisor` refers to the supervisord + supervisorctl + program config file ecosystem.
@@ -5,7 +8,7 @@
 * `supervisord` is the daemon process that you start manually or in your OS's init sequence.
 * `supervisorctl` is the communicating program that sends commands (e.g., update, restart) to the daemon.
 
-[supervisord.org](http://supervisord.org/)
+Package website (extensively documented): [supervisord.org](http://supervisord.org/)
 
 ## Installing
 
@@ -176,8 +179,10 @@ command=twitter-curl
 ## Process monitors
 
 * [**Supervisor**](http://supervisord.org/)
-    - Lightweight - 3MB of RSS on a machine
-    - Nice
+    - Lightweight - 3MB of RSS on a machine running about 10 programs under supervisor's supervision.
+    - Simple config format; constrained, but sufficient.
+    - Sane backoff
+    - Annoyingly writes all `stdout` and `stderr` captures as root, chmod'ed to 600
 
 * [Daemontools](http://cr.yp.to/daemontools.html)
     - Becomes too embedded into your system

@@ -26,6 +26,32 @@ mkdir /etc/supervisor.d/
 echo_supervisord_conf > /etc/supervisord.conf
 ```
 
+Or just use the following trimmed down config file:
+
+```ini
+[inet_http_server]
+port=127.0.0.1:911
+
+[supervisorctl]
+serverurl=http://localhost:991
+
+[supervisord]
+logfile=/tmp/supervisord.log
+logfile_maxbytes=50MB
+logfile_backups=10
+loglevel=info
+pidfile=/tmp/supervisord.pid
+nodaemon=false               ; (start in foreground if true;default false)
+minfds=1024
+minprocs=200
+
+[rpcinterface:supervisor]
+supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
+
+[include]
+files = /etc/supervisor.d/*
+```
+
 `/etc/supervisord.conf` is a special location -- it is the default that supervisor will be looking for.
 You can put it somewhere else and use `-c` whenever calling `supervisord`, but you'll also have to use `-c`
 when calling `supervisorctl`, which is annoying.

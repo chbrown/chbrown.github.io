@@ -31,7 +31,7 @@ Troubleshooting: if that doesn't work, see the Homebrew wiki's [Installation](ht
     brew install node
 
 
-## Red Hat Enterprise Linux
+## Red Hat
 
 Enable "EPEL" (Extra Packages for Enterprise Linux):
 

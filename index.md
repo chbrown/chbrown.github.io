@@ -16,35 +16,6 @@ layout: default
 
 ## References
 
-### Adding a new user on linux
-
-* `adduser` is sometimes a perl wrapper, askin for each detail of information interactively
-* `useradd` is the basic linux system command, non-interactive
-    - `-m` creates a home directory in some default location (see `/etc/default/useradd` for those defaults)
-    - `-U` create a group of the same name as the user
-    - `-G group1,group2` csv of secondary groups
-    - and then a username
-
-        sudo useradd -m -U -G wheel chbrown
-
-And then maybe set the password:
-
-    sudo passwd chbrown
-
-Return to the local machine. Copy default local public key to the remote machine:
-
-    ssh-copy-id chbrown@remote
-
-Or if you don't have ssh-copy-id:
-
-    # on remote:
-    mkdir -pm 700 ~/.ssh
-    touch ~/.ssh/authorized_keys
-    chmod 644 ~/.ssh/authorized_keys
-
-    # on local:
-    cat ~/.ssh/id_rsa.pub | ssh remote 'cat > ~/.ssh/authorized_keys'
-
 ### ssh tunneling
 
 * `ssh`

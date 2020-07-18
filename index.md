@@ -16,25 +16,6 @@ layout: default
 
 ## References
 
-### ssh tunneling
-
-* `ssh`
-    - `-N` Do nothing
-    - `-f` Fork to Background
-    - `-q` Suppress any output
-    - `-v` Verbose
-    - `-p` Specify port (defaults to 22)
-
-| command | effect |
-|---------|--------|
-| `ssh -D 5090 dark -N`                              | Start Socks proxy to dark on :5090 |
-| `ssh dark -L 18053:localhost:8053 -N`              | Tunnel from outgoing :18053 to dark's outgoing :8053, and fork to bg |
-| `ssh -q -o 'StrictHostKeyChecking no' pinker exit` | Unquestioningly add pinker's host key to `~/.ssh/known_hosts` and then quit |
-| `ssh-copy-id -i local.id_rsa.pub dark`             | Copy the key in local.id_rsa.pub to dark's `~/.ssh/authorized_keys` file |
-| `ssh-keygen -t rsa`                                | Interactive: create new key (defaults to `~/.ssh/id_rsa{.pub}`) |
-| `sudo ~/src/sshuttle/sshuttle -l 22 -r chbrown@dark:8080 0.0.0.0/0 -v` | Tunnel all connections through dark on port 8080 |
-| `ssh -t markov 'ssh n004'`                         | Connect to n004 via markov |
-
 ### screen
 
 Command Line

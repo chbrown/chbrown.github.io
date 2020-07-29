@@ -12,10 +12,3 @@ layout: default
 ## Views
 
 * [my gitspective](http://zmoazeni.github.io/gitspective/#/timeline/chbrown)
-
-
-## Default locations
-
-Firefox GreaseMonkey:
-
-    cd ~/Library/Application Support/Firefox/Profiles/*/gm_scripts
